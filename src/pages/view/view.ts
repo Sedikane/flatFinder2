@@ -2,29 +2,29 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 /**
- * Generated class for the HomePage page.
+ * Generated class for the ViewPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-// declare var firebase;
+declare var firebase;
 @IonicPage()
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html',
+  selector: 'page-view',
+  templateUrl: 'view.html',
 })
-export class HomePage {
+export class ViewPage {
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
-    
   }
-
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad HomePage');
+    console.log('ionViewDidLoad ViewPage');
   }
-  getStarted(){
-    this.navCtrl.setRoot("WelcomePage");
+  logoutUser(){
+    var provider = new firebase.auth.GoogleAuthProvider();
+    firebase.auth().signOut().then(User =>{
+      this.navCtrl.push("HomePage");
+    });
   }
-
 }
