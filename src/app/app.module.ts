@@ -3,9 +3,12 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
-
+import { File } from '@ionic-native/file';
 import { MyApp } from './app.component';
 import { Facebook } from '@ionic-native/facebook';
+import { FilePath } from '@ionic-native/file-path';
+import { Camera, CameraOptions } from '@ionic-native/camera';
+import { GooglePlus } from '@ionic-native/google-plus';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,7 @@ import { Facebook } from '@ionic-native/facebook';
   providers: [
     StatusBar,
     SplashScreen,
-    Facebook,
+    Facebook, File, FilePath,Camera, GooglePlus,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

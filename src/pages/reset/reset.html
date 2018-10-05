@@ -1,0 +1,51 @@
+<!--
+  Generated template for the ResetPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+ 
+
+</ion-header>
+
+
+<ion-content class ="content">
+    <ion-buttons left>
+        <button navPop ion-button icon-only (click) = "back()">
+          <ion-icon color="light" name="arrow-back"></ion-icon>
+        </button>
+      </ion-buttons>
+    <form [formGroup]="reset" (ngSubmit)="onreset()" >
+        
+
+        <ion-card >
+            <ion-card-header>Reset Password
+            </ion-card-header>
+            <ion-card-content>
+              <ion-list no-line>
+                
+                  <ion-item>
+                      <ion-label><ion-icon name = "mail"></ion-icon></ion-label>
+                      <ion-input formControlName="email"  type="email" placeholder="Email"></ion-input>
+            
+                    </ion-item>
+                  
+                  <ion-item >
+                      <p>Please enter email address</p>
+                      </ion-item>
+                  
+        
+              </ion-list>
+            </ion-card-content>
+        
+          </ion-card>
+    
+          <button  ion-button  round outline color="light" [disabled] = "!reset.valid">Reset</button>
+    
+    </form> 
+
+
+
+</ion-content>
